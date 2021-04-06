@@ -3,6 +3,11 @@ package com.example.scrabble;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.textservice.TextInfo;
+import android.widget.Button;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
     static String[] str ={
@@ -3005,10 +3010,14 @@ public class MainActivity extends AppCompatActivity {
             ,		"yourself"
             ,		"youth"
             ,		"zone" };
+    Button button;
+    TextInputLayout textInputLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+button = (Button) findViewById(R.id.check);
+textInputLayout = (TextInputLayout) findViewById(R.id.lettersInput);
 
 
     }
