@@ -22,7 +22,8 @@
                 android:id="@+id/lettersInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="input your 7 letters hear" />
+                android:background = ""
+                android:hint="input your 7 letters here" />
 
             <Button
                 android:id="@+id/check"
