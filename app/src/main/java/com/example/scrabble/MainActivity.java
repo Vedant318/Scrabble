@@ -3020,8 +3020,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 button = (Button) findViewById(R.id.check);
-textInputLayout = (TextInputLayout) findViewById(R.id.lettersInput);
-textView = (TextView) findViewById(R.id.textView);
+//textInputLayout = (TextInputLayout) findViewById(R.id.lettersInput);
+textView = (TextView) findViewById(R.id.editText);
 
 button.setOnClickListener(new View.OnClickListener() {
     @Override
