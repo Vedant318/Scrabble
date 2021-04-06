@@ -25,7 +25,8 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="textView"/>
+        android:text="textView"
+        android:layout_below="@id/check"/>
 </RelativeLayout>
 
 
