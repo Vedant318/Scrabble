@@ -3,6 +3,7 @@ package com.example.scrabble;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.view.textservice.TextInfo;
@@ -13,8 +14,10 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
-    static String[] str ={
+    String[] str ={
             "abandon"
             ,		"ability"
             ,		"able"
@@ -82,8 +85,8 @@ public class MainActivity extends AppCompatActivity {
             ,		"affect"
             ,		"afford"
             ,		"afraid"
-            ,		"African"
-            ,		"African-American"
+            ,		"african"
+            ,		"african"
             ,		"after"
             ,		"afternoon"
             ,		"again"
@@ -101,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"ahead"
             ,		"aid"
             ,		"aide"
-            ,		"AIDS"
+            ,		"aids"
             ,		"aim"
             ,		"air"
             ,		"aircraft"
@@ -123,9 +126,8 @@ public class MainActivity extends AppCompatActivity {
             ,		"alternative"
             ,		"although"
             ,		"always"
-            ,		"AM"
             ,		"amazing"
-            ,		"American"
+            ,		"american"
             ,		"among"
             ,		"amount"
             ,		"analysis"
@@ -169,7 +171,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"approval"
             ,		"approve"
             ,		"approximately"
-            ,		"Arab"
+            ,		"arab"
             ,		"architect"
             ,		"area"
             ,		"argue"
@@ -189,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"artist"
             ,		"artistic"
             ,		"as"
-            ,		"Asian"
+            ,		"asian"
             ,		"aside"
             ,		"ask"
             ,		"asleep"
@@ -296,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"better"
             ,		"between"
             ,		"beyond"
-            ,		"Bible"
+            ,		"bible"
             ,		"big"
             ,		"bike"
             ,		"bill"
@@ -356,7 +358,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"bright"
             ,		"brilliant"
             ,		"bring"
-            ,		"British"
+            ,		"british"
             ,		"broad"
             ,		"broken"
             ,		"brother"
@@ -391,7 +393,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"campaign"
             ,		"campus"
             ,		"can"
-            ,		"Canadian"
+            ,		"canadian"
             ,		"cancer"
             ,		"candidate"
             ,		"cap"
@@ -416,7 +418,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"cat"
             ,		"catch"
             ,		"category"
-            ,		"Catholic"
+            ,		"catholic"
             ,		"cause"
             ,		"ceiling"
             ,		"celebrate"
@@ -426,7 +428,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"center"
             ,		"central"
             ,		"century"
-            ,		"CEO"
+            ,		"ceo"
             ,		"ceremony"
             ,		"certain"
             ,		"certainly"
@@ -460,14 +462,14 @@ public class MainActivity extends AppCompatActivity {
             ,		"chief"
             ,		"child"
             ,		"childhood"
-            ,		"Chinese"
+            ,		"chinese"
             ,		"chip"
             ,		"chocolate"
             ,		"choice"
             ,		"cholesterol"
             ,		"choose"
-            ,		"Christian"
-            ,		"Christmas"
+            ,		"christian"
+            ,		"christmas"
             ,		"church"
             ,		"cigarette"
             ,		"circle"
@@ -571,7 +573,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"conflict"
             ,		"confront"
             ,		"confusion"
-            ,		"Congress"
+            ,		"congress"
             ,		"congressional"
             ,		"connect"
             ,		"connection"
@@ -729,7 +731,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"delivery"
             ,		"demand"
             ,		"democracy"
-            ,		"Democrat"
+            ,		"democrat"
             ,		"democratic"
             ,		"demonstrate"
             ,		"demonstration"
@@ -814,7 +816,6 @@ public class MainActivity extends AppCompatActivity {
             ,		"divide"
             ,		"division"
             ,		"divorce"
-            ,		"DNA"
             ,		"do"
             ,		"doctor"
             ,		"document"
@@ -892,7 +893,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"elite"
             ,		"else"
             ,		"elsewhere"
-            ,		"e-mail"
+            ,		"email"
             ,		"embrace"
             ,		"emerge"
             ,		"emergency"
@@ -917,7 +918,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"engine"
             ,		"engineer"
             ,		"engineering"
-            ,		"English"
+            ,		"english"
             ,		"enhance"
             ,		"enjoy"
             ,		"enormous"
@@ -950,7 +951,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"etc"
             ,		"ethics"
             ,		"ethnic"
-            ,		"European"
+            ,		"european"
             ,		"evaluate"
             ,		"evaluation"
             ,		"even"
@@ -1130,7 +1131,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"free"
             ,		"freedom"
             ,		"freeze"
-            ,		"French"
+            ,		"french"
             ,		"frequency"
             ,		"frequent"
             ,		"frequently"
@@ -1179,7 +1180,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"genetic"
             ,		"gentleman"
             ,		"gently"
-            ,		"German"
+            ,		"german"
             ,		"gesture"
             ,		"get"
             ,		"ghost"
@@ -1197,7 +1198,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"glove"
             ,		"go"
             ,		"goal"
-            ,		"God"
+            ,		"god"
             ,		"gold"
             ,		"golden"
             ,		"golf"
@@ -1326,7 +1327,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"hurt"
             ,		"husband"
             ,		"hypothesis"
-            ,		"I"
+            ,		"i"
             ,		"ice"
             ,		"idea"
             ,		"ideal"
@@ -1376,7 +1377,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"independence"
             ,		"independent"
             ,		"index"
-            ,		"Indian"
+            ,		"indian"
             ,		"indicate"
             ,		"indication"
             ,		"individual"
@@ -1421,7 +1422,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"interesting"
             ,		"internal"
             ,		"international"
-            ,		"Internet"
+            ,		"internet"
             ,		"interpret"
             ,		"interpretation"
             ,		"intervention"
@@ -1440,24 +1441,24 @@ public class MainActivity extends AppCompatActivity {
             ,		"involve"
             ,		"involved"
             ,		"involvement"
-            ,		"Iraqi"
-            ,		"Irish"
+            ,		"iraqi"
+            ,		"irish"
             ,		"iron"
-            ,		"Islamic"
+            ,		"islamic"
             ,		"island"
-            ,		"Israeli"
+            ,		"israeli"
             ,		"issue"
             ,		"it"
-            ,		"Italian"
+            ,		"italian"
             ,		"item"
             ,		"its"
             ,		"itself"
             ,		"jacket"
             ,		"jail"
-            ,		"Japanese"
+            ,		"japanese"
             ,		"jet"
-            ,		"Jew"
-            ,		"Jewish"
+            ,		"jew"
+            ,		"jewish"
             ,		"job"
             ,		"join"
             ,		"joint"
@@ -1507,7 +1508,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"last"
             ,		"late"
             ,		"later"
-            ,		"Latin"
+            ,		"latin"
             ,		"latter"
             ,		"laugh"
             ,		"launch"
@@ -1575,7 +1576,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"location"
             ,		"lock"
             ,		"long"
-            ,		"long-term"
+            ,		"longterm"
             ,		"look"
             ,		"loose"
             ,		"lose"
@@ -1664,7 +1665,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"metal"
             ,		"meter"
             ,		"method"
-            ,		"Mexican"
+            ,		"mexican"
             ,		"middle"
             ,		"might"
             ,		"military"
@@ -1684,7 +1685,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"mistake"
             ,		"mix"
             ,		"mixture"
-            ,		"mm-hmm"
+            ,		"mmhmm"
             ,		"mode"
             ,		"model"
             ,		"moderate"
@@ -1715,9 +1716,9 @@ public class MainActivity extends AppCompatActivity {
             ,		"move"
             ,		"movement"
             ,		"movie"
-            ,		"Mr"
-            ,		"Mrs"
-            ,		"Ms"
+            ,		"mr"
+            ,		"mrs"
+            ,		"ms"
             ,		"much"
             ,		"multiple"
             ,		"murder"
@@ -1726,7 +1727,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"music"
             ,		"musical"
             ,		"musician"
-            ,		"Muslim"
+            ,		"muslim"
             ,		"must"
             ,		"mutual"
             ,		"my"
@@ -1828,7 +1829,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"ok"
             ,		"okay"
             ,		"old"
-            ,		"Olympic"
+            ,		"olympic"
             ,		"on"
             ,		"once"
             ,		"one"
@@ -1889,7 +1890,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"painting"
             ,		"pair"
             ,		"pale"
-            ,		"Palestinian"
+            ,		"palestinian"
             ,		"palm"
             ,		"pan"
             ,		"panel"
@@ -1920,7 +1921,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"pause"
             ,		"pay"
             ,		"payment"
-            ,		"PC"
+            ,		"pc"
             ,		"peace"
             ,		"peak"
             ,		"peer"
@@ -1986,7 +1987,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"plenty"
             ,		"plot"
             ,		"plus"
-            ,		"PM"
+            ,		"pm"
             ,		"pocket"
             ,		"poem"
             ,		"poet"
@@ -2235,7 +2236,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"represent"
             ,		"representation"
             ,		"representative"
-            ,		"Republican"
+            ,		"republican"
             ,		"reputation"
             ,		"request"
             ,		"require"
@@ -2303,7 +2304,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"running"
             ,		"rural"
             ,		"rush"
-            ,		"Russian"
+            ,		"russian"
             ,		"sacred"
             ,		"sad"
             ,		"safe"
@@ -2364,7 +2365,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"selection"
             ,		"self"
             ,		"sell"
-            ,		"Senate"
+            ,		"senate"
             ,		"senator"
             ,		"send"
             ,		"senior"
@@ -2473,7 +2474,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"snap"
             ,		"snow"
             ,		"so"
-            ,		"so-called"
+            ,		"socalled"
             ,		"soccer"
             ,		"social"
             ,		"society"
@@ -2505,9 +2506,9 @@ public class MainActivity extends AppCompatActivity {
             ,		"source"
             ,		"south"
             ,		"southern"
-            ,		"Soviet"
+            ,		"soviet"
             ,		"space"
-            ,		"Spanish"
+            ,		"spanish"
             ,		"speak"
             ,		"speaker"
             ,		"special"
@@ -2617,7 +2618,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"supporter"
             ,		"suppose"
             ,		"supposed"
-            ,		"Supreme"
+            ,		"supreme"
             ,		"sure"
             ,		"surely"
             ,		"surface"
@@ -2808,7 +2809,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"tube"
             ,		"tunnel"
             ,		"turn"
-            ,		"TV"
+            ,		"tv"
             ,		"twelve"
             ,		"twenty"
             ,		"twice"
@@ -2831,7 +2832,7 @@ public class MainActivity extends AppCompatActivity {
             ,		"union"
             ,		"unique"
             ,		"unit"
-            ,		"United"
+            ,		"united"
             ,		"universal"
             ,		"universe"
             ,		"university"
@@ -3013,11 +3014,16 @@ public class MainActivity extends AppCompatActivity {
             ,		"yours"
             ,		"yourself"
             ,		"youth"
-            ,		"zone" };
+            ,		"zone"
+    };
+
     Button button;
   //  TextInputLayout textInputLayout;
     TextView textView;
     EditText editText;
+    String temp="";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -3026,12 +3032,68 @@ button = (Button) findViewById(R.id.check);
 //textInputLayout = (TextInputLayout) findViewById(R.id.lettersInput);
 editText = (EditText) findViewById(R.id.editText);
 textView = (TextView) findViewById(R.id.textView);
-
+        ArrayList<String> templist =new ArrayList<String>();
 button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        textView.setText(  editText.getText().toString());
-    }
+       // textView.setText(  editText.getText());
+        String letters = "";
+        templist.clear();
+        boolean bool =false;
+        for(int i=0; i<str.length; i++){
+             letters= editText.getText().toString();
+
+
+            temp=str[i];
+            if(letters.length()>=temp.length()) {
+                for(int k=0; k<=letters.length()-1; k++ ){
+                    if(k!=letters.length()) {
+
+                        for(int j=0; j<temp.length();j++){
+
+                            System.out.println(temp+" "+ letters+" "+j+" "+k);
+
+
+                            if (letters.substring(k,k+1).equals(temp.substring(j,j+1))) {
+
+                                if (letters.length()==0){
+                                    letters="";
+                                }
+                                else   { letters = letters.substring(0, k) + letters.substring(k + 1, letters.length());
+
+                                }
+                                if(temp.length()==0){
+                                    temp="";
+                                }
+                                else{ temp = temp.substring(0, j) + temp.substring(j + 1,temp.length());
+                                }
+
+                                k= 0;
+                                j= -1;
+                            }
+                        }
+                        if(bool==true){
+                            k=-1;
+
+                            bool=false;
+                        }
+                    }
+                }
+
+
+
+                if(temp.length()==0) {
+                    templist.add(str[i]);
+
+                }
+
+
+
+                }
+
+            }
+        textView.setText(templist.toString());
+        }
 });
 
     }
