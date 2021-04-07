@@ -3037,6 +3037,7 @@ button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
        // textView.setText(  editText.getText());
+        long startTime=System.nanoTime();
         String letters = "";
         templist.clear();
         boolean bool =false;
@@ -3056,17 +3057,12 @@ button.setOnClickListener(new View.OnClickListener() {
 
                             if (letters.substring(k,k+1).equals(temp.substring(j,j+1))) {
 
-                                if (letters.length()==0){
-                                    letters="";
-                                }
-                                else   { letters = letters.substring(0, k) + letters.substring(k + 1, letters.length());
 
-                                }
-                                if(temp.length()==0){
-                                    temp="";
-                                }
-                                else{ temp = temp.substring(0, j) + temp.substring(j + 1,temp.length());
-                                }
+                               letters = letters.substring(0, k) + letters.substring(k + 1, letters.length());
+
+
+                                 temp = temp.substring(0, j) + temp.substring(j + 1,temp.length());
+
 
                                 k= 0;
                                 j= -1;
@@ -3092,7 +3088,7 @@ button.setOnClickListener(new View.OnClickListener() {
                 }
 
             }
-        textView.setText(templist.toString());
+        textView.setText("We found these words in "+ (System.nanoTime()-startTime)/1000000000.0+" seconds: "+ templist.toString());
         }
 });
 
