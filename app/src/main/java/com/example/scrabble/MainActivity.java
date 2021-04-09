@@ -3079,8 +3079,8 @@ button.setOnClickListener(new View.OnClickListener() {
         String letters = "";
         templist.clear();
         boolean bool =false;
-        for(int i=0; i<str.length; i++){
-             letters= editText.getText().toString();
+        for(int i=0; i<str.length; i++){//runs through all the words in the array str
+             letters= editText.getText().toString();//resets letters
 
 
             temp=str[i];
@@ -3088,7 +3088,7 @@ button.setOnClickListener(new View.OnClickListener() {
                 for(int k=0; k<=letters.length()-1; k++ ){
                     if(k!=letters.length()) {
 
-                        for(int j=0; j<temp.length();j++){
+                        for(int j=0; j<temp.length();j++){//in this for loop it checks if a letter in the string letters is equal to a string in temp and removes the letter from both strings
 
                             System.out.println(temp+" "+ letters+" "+j+" "+k);
 
@@ -3116,14 +3116,15 @@ button.setOnClickListener(new View.OnClickListener() {
 
 
 
-                if(temp.length()==0) {
-                    c=checkValue(str[i]);
+                if(temp.length()==0) {// if temp equals 0 that means the word matched the letters input
+                    c=checkValue(str[i]);//checks the value of the word from scrabbleList
 
                     scrabbleList list= new scrabbleList(str[i], c);
-                    templist.add(list);
-while(bool==false){
+                    templist.add(list);//adds it to the list
+
+while(bool==false){ //sorts by value
     bool=true;
-    for(int m=0; m<templist.size()-2; m++){
+    for(int m=0; m<templist.size()-1; m++){
         if(templist.get(m).getValue()<templist.get(m+1).getValue()){
             scrabbleList temp = new scrabbleList(templist.get(m+1).getWord(),templist.get(m+1).getValue());
             templist.remove(m+1);
@@ -3132,6 +3133,7 @@ while(bool==false){
 
 
         }
+
     }
 }
                 }
@@ -3140,7 +3142,8 @@ while(bool==false){
 
                 }
 
-            }
+         }
+        // sets the text view to the possible words
         textView.setText("We found these words in "+ (System.nanoTime()-startTime)/1000000000.0+" seconds: "+ templist.toString());
         }
 });
