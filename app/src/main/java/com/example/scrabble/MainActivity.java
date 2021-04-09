@@ -2,6 +2,7 @@ package com.example.scrabble;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
@@ -17,6 +18,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    int c=0;
     String[] str ={
             "abandon"
             ,		"ability"
@@ -3016,6 +3018,41 @@ public class MainActivity extends AppCompatActivity {
             ,		"youth"
             ,		"zone"
     };
+    boolean sorted=false;
+    public int checkValue(String s){
+        int val =0;
+        while(s.length()!=0){
+            if(s.substring(0,1).equals("q")||s.substring(0,1).equals("z")){
+                val+= 10;
+            }
+            if(s.substring(0,1).equals("j")||s.substring(0,1).equals("x")){
+                val+= 8;
+            }
+            if(s.substring(0,1).equals("k")){
+                val+= 5;
+            }
+            if(s.substring(0,1).equals("f")||s.substring(0,1).equals("h")||s.substring(0,1).equals("v")||s.substring(0,1).equals("w")||s.substring(0,1).equals("y")){
+                val+= 4;
+            }
+            if(s.substring(0,1).equals("b")||s.substring(0,1).equals("c")||s.substring(0,1).equals("m")||s.substring(0,1).equals("p")){
+                val+= 3;
+            }
+            if(s.substring(0,1).equals("d")||s.substring(0,1).equals("g")){
+                val+= 2;
+            }
+            else {
+                val += 1;
+            }
+            s=s.substring(1,s.length());
+
+        }
+        return val;
+    }
+
+   ArrayList<scrabbleList> templist =new ArrayList<scrabbleList>();
+    public String toString() {
+        return templist.toString();
+    }
 
     Button button;
   //  TextInputLayout textInputLayout;
@@ -3032,8 +3069,9 @@ button = (Button) findViewById(R.id.check);
 //textInputLayout = (TextInputLayout) findViewById(R.id.lettersInput);
 editText = (EditText) findViewById(R.id.editText);
 textView = (TextView) findViewById(R.id.textView);
-        ArrayList<String> templist =new ArrayList<String>();
+
 button.setOnClickListener(new View.OnClickListener() {
+    @SuppressLint("SetTextI18n")
     @Override
     public void onClick(View v) {
        // textView.setText(  editText.getText());
@@ -3079,8 +3117,23 @@ button.setOnClickListener(new View.OnClickListener() {
 
 
                 if(temp.length()==0) {
-                    templist.add(str[i]);
+                    c=checkValue(str[i]);
 
+                    scrabbleList list= new scrabbleList(str[i], c);
+                    templist.add(list);
+while(bool==false){
+    bool=true;
+    for(int m=0; m<templist.size()-2; m++){
+        if(templist.get(m).getValue()<templist.get(m+1).getValue()){
+            scrabbleList temp = new scrabbleList(templist.get(m+1).getWord(),templist.get(m+1).getValue());
+            templist.remove(m+1);
+            templist.add(m,temp);
+            bool=false;
+
+
+        }
+    }
+}
                 }
 
 
