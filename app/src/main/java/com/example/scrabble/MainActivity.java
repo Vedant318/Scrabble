@@ -7342,6 +7342,7 @@ public class MainActivity extends AppCompatActivity {
 
     };
     boolean sorted=false;
+    int wordcount=0;
     public int checkValue(String s){
         int val =0;
         while(s.length()!=0){
@@ -7399,6 +7400,7 @@ button.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
        // textView.setText(  editText.getText());
         long startTime=System.nanoTime();
+        wordcount=0;
         String letters = "";
         templist.clear();
         boolean bool =false;
@@ -7445,6 +7447,7 @@ button.setOnClickListener(new View.OnClickListener() {
 
                     scrabbleList list= new scrabbleList(str[i], c);
                     templist.add(list);//adds it to the list
+                    wordcount++;
 
 while(bool==false){ //sorts by value
     bool=true;
@@ -7468,7 +7471,7 @@ while(bool==false){ //sorts by value
 
          }
         // sets the text view to the possible words
-        textView.setText("We found these words in "+ (System.nanoTime()-startTime)/1000000000.0+" seconds: "+ templist.toString());
+        textView.setText("We found "+wordcount +" words in "+ (System.nanoTime()-startTime)/1000000000.0+" seconds: "+ templist.toString());
         }
 });
 
